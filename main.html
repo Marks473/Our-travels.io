@@ -166,6 +166,25 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Стили для изображений */
+.grid a img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Эффект наведения на изображения */
+.grid a img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
 /* Адаптивность для маленьких экранов */
 @media (max-width: 768px) {
     .grid {
@@ -260,7 +279,53 @@
   z-index:-1;
 }
 	
-	
+/* ===== Адаптивная карта ===== */
+    .map-wrap{width:100%;aspect-ratio:3/4}
+    @media(min-width:600px){.map-wrap{aspect-ratio:16/9}}
+    .map-wrap iframe,
+    .map-wrap .ymaps-2-1-79-map{
+      width:100%!important;height:100%!important;border:0
+    }
+
+
+         nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s;
+    }
+
+    nav a:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 640px) {
+      #burger {
+        display: flex;
+      }
+      nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #4e54c8;
+        position: absolute;
+        top: 60px;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+      nav.open {
+        display: flex;
+        max-height: 300px; /* Установите нужную высоту для раскрытия */
+      }
+    }
 	
   </style>
 </head>
@@ -272,7 +337,7 @@
   <p>Вместе мы исследуем мир и создаем воспоминания</p>
 </header>
 
-<nav>
+<nav id="site-nav" aria-label="Основная навигация">
   <a href="#travels">Наши путешествия</a>
   <a href="#gallery">Галерея</a>
   <a href="#map">Карта</a>
@@ -375,97 +440,101 @@
 </section>
 
 <section id="map">
-  <h2>Карта наших приключений</h2>
-  <div>
-    <img src="https://placehold.co/400x200?text=Карта" alt="Карта">
-  </div>
-</section>
+    <h2>Карта наших приключений</h2>
+    <div class="map-wrap">
+      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A913b93bea626e9513b79446a1aee5ae7fe3184dca36ff14b877f104c0409c67c&amp;lang=ru_RU&amp;scroll=true" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </section>
 
-
-<section id="checklist">
-  <h2>Чек-лист</h2>
-  <h3> Улан-Удэ: </h3>
-  <div class="grid">
-	<img src="https://placehold.co/800x400?text=Фото">
-  </div>
-  <div class="checklist-item">
-    <input type="checkbox" id="item1">
-    <label for="item1">Лемонад фирменый</label>
-  </div>
-  
-  <div class="grid">
-	<img src="https://placehold.co/800x400?text=Фото">
-  </div>
-  <div class="checklist-item">
-    <input type="checkbox" id="item1">
-    <label for="item1">Иволгинский дацан</label>
-  </div>
-  <p>Это главный буддийский центр России, расположенный примерно в 23 км от Улан-Удэ в селе Верхняя Иволга. Дацан был основан в 1945 году как единственный официально действующий буддийский храм в СССР в то время. Сегодня это комплекс, включающий несколько храмов, ступ, молитвенных барабанов и резиденцию Хамбо-ламы — главы буддистов России.</p>
-  
-  <div class="grid">
-	<img src="https://placehold.co/800x400?text=Фото">
-  </div>
-  <div class="checklist-item">
-    <input type="checkbox" id="item2">
-    <label for="item2">Этнографический музей народов Забайкалья</label>
-  </div>
-  <p>Расположен под открытым небом в пригороде Улан-Удэ (в районе Верхняя Березовка, примерно в 8 км от центра). Это один из крупнейших музеев такого рода в России, занимающий площадь около 37 гектаров. Музей был открыт в 1973 году и представляет собой реконструкцию традиционных поселений народов, живших в Забайкалье.</p>
-  
-  <div class="grid">
-	<img src="https://placehold.co/800x400?text=Фото">
-  </div>
-  <div class="checklist-item">
-    <input type="checkbox" id="item2">
-    <label for="item2">Площадь Советов и памятник Ленину</label>
-  </div>
-  <p>Центральная площадь Улан-Удэ, расположенная в исторической части города, является сердцем общественной и политической жизни. Здесь находятся здания правительства Бурятии и другие административные учреждения.</p>
-  
-  <div class="grid">
-	<img src="https://placehold.co/800x400?text=Фото">
-  </div>
-  <div class="checklist-item">
-    <input type="checkbox" id="item2">
-    <label for="item2">Одигитриевский собор</label>
-  </div>
-  <p>Этот православный храм, расположенный на берегу реки Уды, является одним из старейших каменных зданий города. Он был построен в 1741–1785 годах и представляет собой образец сибирского барокко.</p>
+<section id="travels">
+	<h2>Чек-лист</h2>
+	<h3> Улан-Удэ: </h3>
+	<div class="grid">
+	  <div class="card">
+		<a href="https://sputnik03.ru/catalog/gazirovannye_napitki/"><img src="https://teliani.net/d/dsc_6305.jpg"></a>
+		<div class="checklist-item">
+			<input type="checkbox" id="item1">
+			<label for="item1">Лемонад фирменый</label>
+		</div>
+	  </div>
+	  
+	  <div class="card">
+		<a href="https://yandex.ru/maps/-/CHW7QS4Q"><img src="https://avatars.mds.yandex.net/get-altay/1938605/2a0000016d00342f7b6ff4df7b96387a542d/XXXL"></a>
+		<div class="checklist-item">
+			<input type="checkbox" id="item1">
+			<label for="item1">Парк Мемориал Победы</label>
+		</div>
+		<p>На территории парка находится архитектурный ансамбль, состоящий из памятника-танка Т-34-85 и барельефа с именами и портретами героев СССР, выходцев из Бурятии.</p>
+		</div>
   
   
-  <h3>Горяченск</h3>
-  <div class="grid">
-	<img src="https://placehold.co/800x400?text=Фото">
-  </div>
-  <div class="checklist-item">
-    <input type="checkbox" id="item2">
-    <label for="item2">Термальные источники Горячинска</label>
-   </div>
-	 <p>Главной достопримечательностью посёлка являются горячие минеральные источники, температура воды в которых достигает 54 °C. Эти источники используются в санатории «Горячинск» для лечения заболеваний опорно-двигательного аппарата, нервной системы и кожи. Воды содержат кремний, фтор и другие полезные элементы. Даже если вы не останавливаетесь в санатории, можно посетить источники для общего оздоровления или просто узнать об их истории.</p>
- 
- <div class="grid">
-	<img src="https://placehold.co/800x400?text=Фото">
-  </div>
-  <div class="checklist-item">
-    <input type="checkbox" id="item2">
-    <label for="item2">Пляжи озера Байкал</label>
- </div>
- <p>Горячинск находится непосредственно на берегу Байкала, и в летний сезон здесь можно насладиться песчаными пляжами. Один из самых известных — пляж вблизи посёлка, который называют одним из лучших на восточном побережье озера. Это отличное место для купания, солнечных ванн и спокойного отдыха с видом на бескрайние воды Байкала. Вода в этом районе относительно тёплая летом по сравнению с другими частями озера.</p>
- 
- <div class="grid">
-	<img src="https://placehold.co/800x400?text=Фото">
-  </div>
-  <div class="checklist-item">
-    <input type="checkbox" id="item2">
-    <label for="item2">Природные тропы и леса</label>
-  </div>
-  <p>Окрестности Горячинска окружены хвойными лесами, которые создают уникальный микроклимат. Здесь проложены пешеходные тропы для прогулок, где можно насладиться чистым воздухом, тишиной и видами на Байкал. Эти тропы подходят как для коротких прогулок, так и для более длительных походов, особенно в сторону мыса Горячинский, с которого открываются панорамные виды на озеро.</p>
+	  <div class="card">
+		<a href="https://yandex.ru/maps/-/CHW74ImO"><img src="https://avatars.mds.yandex.net/get-altay/1903890/2a0000016ae30f41c03052040d5dc3f8f3bd/XXXL"></a>
+		<div class="checklist-item">
+			<input type="checkbox" id="item2">
+			<label for="item2">Музей истории Бурятии имени М.Н. Хангалова</label>
+		</div>
+		<p>Музей истории Бурятии имени М.Н. Хангалова — это исторический музей в Улан-Удэ, Бурятия. Он был создан в 1919 году и изначально располагался в здании бывшего Реального училища. В 1923 году музей был реорганизован в Бурят-Монгольский национальный музей.</p>
+	  </div>
+	  
+	  <div class="card">
+		<a href="https://yandex.ru/maps/-/CHW7EJKw"><img src="https://avatars.mds.yandex.net/get-altay/11048854/2a0000018b4bee505b6093498843afac4b55/XXXL"></a>
+		<div class="checklist-item">
+			<input type="checkbox" id="item2">
+			<label for="item2">Площадь Советов и памятник Ленину</label>
+		</div>
+		<p>Центральная площадь Улан-Удэ, расположенная в исторической части города, является сердцем общественной и политической жизни. Здесь находятся здания правительства Бурятии и другие административные учреждения.</p>
+	  </div>
+	  
+	  <div class="card">
+		<a href="https://yandex.ru/maps/-/CHW74D6v"><img src="https://avatars.mds.yandex.net/get-altay/9752112/2a000001891bd8c195e45de5d89a0291f4ad/XXXL"></a>
+		
+		<div class="checklist-item">
+			<input type="checkbox" id="item2">
+			<label for="item2">Одигитриевский собор</label>
+		</div>
+		<p>Этот православный храм, расположенный на берегу реки Уды, является одним из старейших каменных зданий города. Он был построен в 1741–1785 годах и представляет собой образец сибирского барокко.</p>
+	   </div>
+	</div>  
   
-  <div class="grid">
-	<img src="https://placehold.co/800x400?text=Фото">
-  </div>
-  <div class="checklist-item">
-    <input type="checkbox" id="item2">
-    <label for="item2">Мыс Горячинский</label>
-  </div>
-  <p> Этот мыс находится недалеко от посёлка и является популярным местом для туристов. С него открывается потрясающий вид на Байкал и окружающие горы. Это идеальное место для фотографий и созерцания природы, особенно на закате или восходе.</p>
+	<h3>Горяченск</h3>
+	<div class="grid">
+		<div class="card">
+			<a href="https://yandex.ru/maps/-/CHW7e2-o"><img src="https://avatars.mds.yandex.net/get-altay/13793720/2a0000019155656b444abcccd8de9739fba4/XXXL"></a>
+			<div class="checklist-item">
+				<input type="checkbox" id="item2">
+				<label for="item2">Термальные источники Горячинска</label>
+			</div>
+			<p>Главной достопримечательностью посёлка являются горячие минеральные источники, температура воды в которых достигает 54 °C. Эти источники используются в санатории «Горячинск» для лечения заболеваний опорно-двигательного аппарата, нервной системы и кожи. Воды содержат кремний, фтор и другие полезные элементы. Даже если вы не останавливаетесь в санатории, можно посетить источники для общего оздоровления или просто узнать об их истории.</p>
+		</div>
+		
+		<div class="card">
+			<a href="https://yandex.ru/maps/-/CHW7iLKK"><img src="https://avatars.mds.yandex.net/get-altay/13461681/2a000001912cc8baf100cce64febee47a473/XXXL"></a>
+			<div class="checklist-item">
+				<input type="checkbox" id="item2">
+				<label for="item2">Пляжи озера Байкал</label>
+			</div>
+			<p>Горячинск находится непосредственно на берегу Байкала, и в летний сезон здесь можно насладиться песчаными пляжами. Один из самых известных — пляж вблизи посёлка, который называют одним из лучших на восточном побережье озера. Это отличное место для купания, солнечных ванн и спокойного отдыха с видом на бескрайние воды Байкала. Вода в этом районе относительно тёплая летом по сравнению с другими частями озера.</p>
+		</div>
+		
+		<div class="card">
+			<a href="https://yandex.ru/maps/-/CHW7m87x"><img src="https://avatars.mds.yandex.net/get-entity_search/9708398/779153805/S600xU_2x"></a>
+			<div class="checklist-item">
+				<input type="checkbox" id="item2">
+				<label for="item2">Природные тропы и леса</label>
+			</div>
+			<p>Окрестности Горячинска окружены хвойными лесами, которые создают уникальный микроклимат. Здесь проложены пешеходные тропы для прогулок, где можно насладиться чистым воздухом, тишиной и видами на Байкал. Эти тропы подходят как для коротких прогулок, так и для более длительных походов, особенно в сторону мыса Горячинский, с которого открываются панорамные виды на озеро.</p>
+  		</div>
+		
+		<div class="card">
+			<a href="https://yandex.ru/maps/-/CHW7uI59"><img src="https://7d9e88a8-f178-4098-bea5-48d960920605.selcdn.net/3617c7a3-8a02-46d6-a6a4-e05e126ae928/-/resize/x600/-/quality/smart_retina/"></a>
+			<div class="checklist-item">
+				<input type="checkbox" id="item2">
+				<label for="item2">Мыс Горячинский</label>
+			</div>
+			<p>Этот мыс находится недалеко от посёлка и является популярным местом для туристов. С него открывается потрясающий вид на Байкал и окружающие горы. Это идеальное место для фотографий и созерцания природы, особенно на закате или восходе.</p>
+  		</div>
+	</div>
 </section>
 
 <section class="section" id="expenses">
@@ -475,16 +544,46 @@
                     <li><span>Проживание в Улан-Удэ</span><span>10 760 ₽</span></li>
                     <li><span>Проживание в Горячинске</span><span>18 000 ₽</span></li>
                     <li><span>Билет на самолёт</span><span>12 428 ₽</span></li>
-					<li><span>Питание</span><span>## ### ₽ (скоро будет)</span></li>
-					<li><span>Экскурсии</span><span>## ### ₽ (скоро будет)</span></li>
+					<li><span>Питание</span><span>## ### ₽</span></li>
+					<li><span>Экскурсии</span><span>## ### ₽</span></li>
                 </ul>
             </div>
         </section>
 
 <footer>
   Сайт создан для нашей истории путешествий!
-  <h1 class="fancy">© Alina&nbsp;&amp;&nbsp;Mark</h1>
+  <h6 class="fancy">© Alina&nbsp;&amp;&nbsp;Mark</h6>
 </footer>
+
+<script>
+    /* ===== 1. Бургер-меню ===== */
+    const burger=document.getElementById('burger');
+    const nav=document.getElementById('site-nav');
+    burger?.addEventListener('click',()=>{
+      const expanded=burger.getAttribute('aria-expanded')==='true';
+      burger.setAttribute('aria-expanded',!expanded);
+      nav.classList.toggle('open');
+    });
+
+    /* ===== 2. Scroll-spy и aria-current ===== */
+    const sections=document.querySelectorAll('section[id]');
+    const navLinks=nav.querySelectorAll('a');
+    const spy=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        const link=nav.querySelector(`a[href="#${e.target.id}"]`);
+        if(e.isIntersecting){
+          navLinks.forEach(a=>a.removeAttribute('aria-current'));
+          link?.setAttribute('aria-current','page');
+        }
+      });
+    },{rootMargin:'-40% 0px -50% 0px'});
+    sections.forEach(s=>spy.observe(s));
+
+    /* ===== 3. Закрываем меню после клика по пункту (моб.) ===== */
+    nav.addEventListener('click',e=>{
+      if(e.target.tagName==='A'&&nav.classList.contains('open')){burger.click()}
+    });
+  </script>
 
 </body>
 </html>
