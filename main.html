@@ -288,46 +288,40 @@
     }
 
 
-         nav {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
+nav {
+      background-color: #ffccd5;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+ 
+      width: 100%;
+     
     }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: transform 0.3s;
+    
+    nav ul {
+      list-style: none;
+	  font-size: 30px;
     }
-
-    nav a:hover {
-      transform: scale(1.1);
+	nav a {
+	  font-size: 30px;
+	}
+    
+    
+    
+    .icon {
+      font-size: 30px;
     }
-
-    @media (max-width: 640px) {
-      #burger {
-        display: flex;
-      }
-      nav {
-        display: none;
+    
+    /* Responsive design */
+    @media (max-width: 600px) {
+      ul {
         flex-direction: column;
         align-items: center;
-        background-color: #4e54c8;
-        position: absolute;
-        top: 60px;
-        width: 100%;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-      }
-      nav.open {
-        display: flex;
-        max-height: 300px; /* Установите нужную высоту для раскрытия */
+        gap: 10px;
       }
     }
-	
+
+ 
   </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -337,12 +331,14 @@
   <p>Вместе мы исследуем мир и создаем воспоминания</p>
 </header>
 
-<nav id="site-nav" aria-label="Основная навигация">
-  <a href="#travels">Наши путешествия</a>
-  <a href="#gallery">Галерея</a>
-  <a href="#map">Карта</a>
-  <a href="#checklist">Чек-лист</a>
-  <a href="#expenses">Список расходов</a>
+<nav class="navbar"> 
+    <ul>
+      <li><a href="#travels"><i class="fas fa-plane-departure icon"></i>Этапы путешествия</a></li>
+      <li><a href="#gallery"><i class="fas fa-images icon"></i>Галерея</a></li>  
+	  <li><a href="#map"><i class="fas fa-map-marked-alt icon"></i>Карта</a></li>
+      <li><a href="#checklist"><i class="fas fa-check-square icon"></i>Чек-лист</a></li>
+      <li><a href="#expenses"><i class="fas fa-wallet icon"></i>Список расходов</a></li>
+    </ul>
 </nav>
 
 <section id="travels">
@@ -350,8 +346,8 @@
   <div class="grid">
     <div class="card">
       <img src="gallery\airplane Irkutsk Ulan Ude.png" alt="Placeholder">
-      <h3>1. Самалёт: Иркутск → Улан-Удэ </h3>
-	  <h4>21.06.2025</h4>
+      <h3>1. Самолёт: Иркутск → Улан-Удэ </h3>
+	  <h4>21.07.2025</h4>
       <p>Вылет: 05:55 <br>
 	  Прилёт: 06:45<br>
 	  Время в пути: 50 мин.</p>
@@ -362,8 +358,8 @@
     <div class="card">
       <img src="gallery\Ylan-Нву.jpg" alt="Placeholder">
       <h3>2. Улан-Удэ</h3>
-	  <h4>21.06.2025</h4>
-      <p>Приезжаем, гуляем по городу, наслождаемся, далее содимся на маршерудку в Горяченск</p>
+	  <h4>21.07.2025</h4>
+      <p>Приезжаем, гуляем по городу, наслождаемся, далее садимся на маршерудку в Горяченск</p>
 	  <p>Интересная информация: <a href="https://proza.ru/2025/04/30/625">Город Улан-Удэ, происхождение названия</a> <br>
 	  Улан-Удэ — это столица Республики Бурятия, расположенная в Восточной Сибири, недалеко от озера Байкал. Город находится в долине реки Селенги, которая является крупнейшим притоком Байкала, и окружен живописными горами Хамар-Дабан и Улан-Бургасы. Это важный культурный, экономический и транспортный центр региона.
 
@@ -373,8 +369,8 @@
 	</div>
 	<div class="card">
       <img src="gallery\ylan-gor.png" alt="Placeholder">
-      <h3>3. Маршерутка: Улан-Удэ → село Горячинск</h3>
-	  <h4>21.06.2025</h4>
+      <h3>3. Маршрутка: Улан-Удэ → село Горячинск</h3>
+	  <h4>21.07.2025</h4>
       <p>Выезд: ##:## <br>
 	  Приезд: ##:##<br>
 	  Время в пути: ## мин.</p>
@@ -383,11 +379,11 @@
 	<div class="card">
       <img src="https://avatars.mds.yandex.net/i?id=7656145dcb0eb20d347546d8b083639f_l-5243384-images-thumbs&n=13" alt="Placeholder">
       <h3>4. Горячинск</h3>
-	  <h4>21.06.2025 - 30.06.2025 </h4>
+	  <h4>21.07.2025 - 30.07.2025 </h4>
       <p>Заезд: 12:00 <br>
 	  Выезд: 10:00<br>
 	  Длительность: 10 дней</p>
-	  <p>Будем жить в <b><a href="https://yandex.ru/maps/-/CHWVE06D">гостинице уют</a></b>; ходить по берегу Байкала, путишествовать и ходить на працедуры в <b><a href="https://yandex.ru/maps/-/CHWVIF6W">санаторий</a></b><br>Горячинск — это курортный посёлок в 
+	  <p>Будем жить в <b><a href="https://yandex.ru/maps/-/CHWVE06D">гостинице уют</a></b>; ходить по берегу Байкала, путешествовать и ходить на процедуры в <b><a href="https://yandex.ru/maps/-/CHWVIF6W">санаторий</a></b><br>Горячинск — это курортный посёлок в 
 	  Прибайкальском районе Республики Бурятия, 
 	  расположенный на восточном берегу озера Байкал, 
 	  примерно в 174 км от Улан-Удэ. Он находится
@@ -399,27 +395,27 @@
 	</div>
 	<div class="card">
       <img src="gallery\ylan-gor2.png" alt="Placeholder">
-      <h3>5. Маршерутка: село Горячинск → Улан-Удэ </h3>
-	  <h4>30.06.2025</h4>
+      <h3>5. Маршрутка: село Горячинск → Улан-Удэ </h3>
+	  <h4>30.07.2025</h4>
       <p>Выезд: ##:## <br>
 	  Приезд: ##:##<br>
 	  Время в пути: ## мин.</p>
-	  <p>Некоторая чать пути будет проходить в доль Байкала</p>
+	  <p>Некоторая часть пути будет проходить вдоль Байкала</p>
 	</div>
 	<div class="card">
       <img src="gallery\Ylan-Нву.jpg" alt="Placeholder">
       <h3>6. Улан-Удэ</h3>
-	  <h4>30.06.2025 - 03.07.2025 </h4>
+	  <h4>30.07.2025 - 03.08.2025 </h4>
       <p>Заезд: 14:00 <br>
 	  Выезд: 12:00<br>
 	  Длительность: 4 дня</p>
 	  <p>Будем жить в квартире студии <b><a href="https://www.avito.ru/ulan-ude/kvartiry/kvartira-studiya_44_m_2_krovati_4441013027?guests=2&context=H4sIAAAAAAAA_wH1AAr_YTo2OntzOjc6ImNoZWNrSW4iO3M6MTA6IjIwMjUtMDctMzAiO3M6ODoiY2hlY2tPdXQiO3M6MTA6IjIwMjUtMDgtMDMiO3M6MTE6Imd1ZXN0c0NvdW50IjtpOjMwMjI0MTQ7czoxNDoiZ3Vlc3RzRGV0YWlsZWQiO3M6NTg6InsidmVyc2lvbiI6MSwidG90YWxDb3VudCI6MiwiYWR1bHRzQ291bnQiOjIsImNoaWxkcmVuIjpbXX0iO3M6MTM6ImxvY2FsUHJpb3JpdHkiO2I6MDtzOjE6IngiO3M6MTY6IkM4WlhkMUY0bDJlTUljeFIiO32VOe5x9QAAAA&guestsDetailed=%7B%22totalCount%22%3A2%2C%22adultsCount%22%3A2%2C%22version%22%3A1%7D">Квартира-студия </a>
-		</b>Наш путиводителем будет, мой друг Арсик😁</p>
+		</b>Наш путеводителем будет, мой друг Арсик😁</p>
 	</div>
 	  <div class="card">
       <img src="gallery\airplane Irkutsk Ulan Ude.png" alt="Placeholder">
-      <h3>7. Самалёт: Улан-Удэ → Иркутск</h3>
-	  <h4>03.06.2025</h4>
+      <h3>7. Самолёт: Улан-Удэ → Иркутск</h3>
+	  <h4>03.08.2025</h4>
       <p>Вылет: 07:25 <br>
 	  Прилёт: 08:15<br>
 	  Время в пути: 50 мин.</p>
@@ -454,7 +450,7 @@
 		<a href="https://sputnik03.ru/catalog/gazirovannye_napitki/"><img src="https://teliani.net/d/dsc_6305.jpg"></a>
 		<div class="checklist-item">
 			<input type="checkbox" id="item1">
-			<label for="item1">Лемонад фирменый</label>
+			<label for="item1">Лимонад фирменный</label>
 		</div>
 	  </div>
 	  
@@ -555,35 +551,6 @@
   <h6 class="fancy">© Alina&nbsp;&amp;&nbsp;Mark</h6>
 </footer>
 
-<script>
-    /* ===== 1. Бургер-меню ===== */
-    const burger=document.getElementById('burger');
-    const nav=document.getElementById('site-nav');
-    burger?.addEventListener('click',()=>{
-      const expanded=burger.getAttribute('aria-expanded')==='true';
-      burger.setAttribute('aria-expanded',!expanded);
-      nav.classList.toggle('open');
-    });
-
-    /* ===== 2. Scroll-spy и aria-current ===== */
-    const sections=document.querySelectorAll('section[id]');
-    const navLinks=nav.querySelectorAll('a');
-    const spy=new IntersectionObserver(entries=>{
-      entries.forEach(e=>{
-        const link=nav.querySelector(`a[href="#${e.target.id}"]`);
-        if(e.isIntersecting){
-          navLinks.forEach(a=>a.removeAttribute('aria-current'));
-          link?.setAttribute('aria-current','page');
-        }
-      });
-    },{rootMargin:'-40% 0px -50% 0px'});
-    sections.forEach(s=>spy.observe(s));
-
-    /* ===== 3. Закрываем меню после клика по пункту (моб.) ===== */
-    nav.addEventListener('click',e=>{
-      if(e.target.tagName==='A'&&nav.classList.contains('open')){burger.click()}
-    });
-  </script>
 
 </body>
 </html>
