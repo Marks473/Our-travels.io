@@ -1,0 +1,140 @@
+/* =====================   ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ   ===================== */
+:root{
+  --bg:            #f9f9f9;
+  --text:          #333;
+  --primary:       #ff6180;
+  --primary-light: #ffccd5;
+  --card-bg:       #fff;
+  --shadow:        rgba(0,0,0,.1);
+}
+
+/* =====  ТЕМЫ  ======================================================== */
+body.theme-mono  {--bg:#fff;    --text:#000;     --primary:#000;    --primary-light:#777;}
+body.theme-blue  {--bg:#f0f7ff; --text:#033e8c;  --primary:#1e88e5; --primary-light:#bbdefb;}
+body.theme-yellow{--bg:#fffde7; --text:#7a5b00;  --primary:#fbc02d; --primary-light:#fff9c4;}
+body.theme-green {--bg:#f1faf4; --text:#075e3d;  --primary:#43a047; --primary-light:#c8e6c9;}
+/* pink = default (root) */
+
+/* =====================   БАЗОВАЯ ВЕРСТКА   =========================== */
+*{box-sizing:border-box}
+body{
+  margin:0;padding:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg); color:var(--text);
+}
+
+/* ---------- Header ---------- */
+header{
+  background:var(--primary-light);
+  padding:40px 20px;
+  text-align:center;
+  position:relative;
+}
+header h1      {font-size:2.5rem;color:var(--primary);}
+header p       {font-size:1.2rem;margin-top:10px;color:#555;}
+header .heart  {font-size:50px;color:var(--primary);margin:20px auto;animation:heartbeat 1s infinite;}
+
+@keyframes heartbeat{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+
+/* ---------- Навигация ---------- */
+nav{
+  background:var(--primary);
+  padding:10px 0;
+  width:100%;
+  text-align:center;
+  box-shadow:0 4px 20px var(--shadow);
+}
+nav ul{list-style:none;margin:0;padding:0;display:flex;justify-content:center;gap:15px;font-size:1.25rem}
+nav a{color:#fff;text-decoration:none;font-size:75%;}
+nav a:hover{text-decoration:underline}
+
+/* ---------- Секции ---------- */
+section     {padding:40px 20px}
+section h2  {font-size:2rem;color:var(--primary);text-align:center;margin-bottom:20px}
+
+/* ---------- Грид изображений / карточек ---------- */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:var(--card-bg);
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 2px 6px var(--shadow);
+}
+.card img{
+  width:100%;height:200px;object-fit:cover;
+  border-radius:10px;margin-bottom:15px;
+}
+
+/* картинки в гриде (и ссылки-картинки) */
+.grid img,
+.grid a img{
+  width:100%;height:250px;object-fit:cover;
+  border-radius:8px;border:2px solid #fff;
+  cursor:pointer;
+  box-shadow:0 2px 8px var(--shadow);
+  transition:transform .3s ease,box-shadow .3s ease;
+  animation:fadeIn .5s ease-out forwards;opacity:0;
+}
+.grid img:hover,
+.grid a img:hover{
+  transform:scale(1.05);
+  box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+/* ---------- Чек-лист, расходы ---------- */
+.checklist-item{display:flex;align-items:center;gap:10px;margin:5px 0}
+.checklist-item input{width:1rem;height:1rem}
+
+.expenses{
+  background:var(--card-bg);border:1px solid #ddd;border-radius:8px;
+  padding:1rem;box-shadow:0 2px 5px var(--shadow);
+}
+.expenses ul{list-style:none;padding:0;margin:0}
+.expenses li{display:flex;justify-content:space-between;margin:.5rem 0}
+
+/* ---------- Футер ---------- */
+footer{
+  background:var(--primary-light);
+  color:#fff;text-align:center;
+  padding:20px;margin-top:40px;
+}
+footer img{width:50%;border-radius:10px;margin-bottom:15px}
+
+/* ---------- Fancy-заголовок ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+.fancy{
+  font-family:'Great Vibes',cursive;
+  font-size:8vw;font-weight:700;letter-spacing:4px;text-align:center;
+  background:linear-gradient(-45deg,#ff2a2a,#ff9a00,#ffeb3b,#00e676,#00bcd4,#3d5afe,#e040fb,#ff2a2a);
+  background-size:800% 800%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:flow 10s ease-in-out infinite;
+  text-shadow:0 0 10px rgba(255,255,255,.8),0 0 20px rgba(255,255,255,.6),0 0 40px currentColor;
+  position:relative;margin:0;padding:20px 0;
+}
+@keyframes flow{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+.fancy::before{
+  content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(1.05);
+  width:110%;height:110%;z-index:-1;filter:blur(20px);
+  background:radial-gradient(circle,rgba(255,255,255,.3) 0%,rgba(255,255,255,0) 70%);
+}
+
+/* ---------- Адаптивы ---------- */
+@media(max-width:768px){
+  .grid{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
+  .grid img,.grid a img{height:200px}
+}
+
+/* ---------- Анимации ---------- */
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* ---------- Карта (изменённые ; и :) ---------- */
+.map-wrap{width:100%;aspect-ratio:3/4;}
+@media(min-width:600px){.map-wrap{aspect-ratio:16/9;}}
+.map-wrap iframe,
+.map-wrap .ymaps-2-1-79-map{width:100%!important;height:100%!important;border:0}

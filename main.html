@@ -5,346 +5,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Наши путешествия</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-
-    header {
-      background-color: #ffccd5;
-      padding: 40px 20px;
-      text-align: center;
-      position: relative;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      color: #ff6180;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      color: #555;
-    }
-
-    header .heart {
-      font-size: 50px;
-      color: #ff6180;
-      margin: 20px auto;
-      animation: heartbeat 1s infinite;
-    }
-
-    @keyframes heartbeat {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.2);
-      }
-    }
-
-    nav {
-      background-color: #ff6180;
-      padding: 10px 0;
-      text-align: center;
-    }
-
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-size: 1rem;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    section {
-      padding: 40px 20px;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      color: #ff6180;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-	footer img {
-	  width: 50%;
-      border-radius: 10px;
-      margin-bottom: 15px;
-	}
-
-    .card {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-
-    .checklist-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 5px 0;
-    }
-
-    .checklist-item input {
-      width: 1rem;
-      height: 1rem;
-    }
-
-	.expenses {
-        background: #fff;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 1rem;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .expenses ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .expenses li {
-        margin: 0.5rem 0;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    footer {
-      background-color: #ffccd5;;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-	
-	
-
-
-
-/* Сетка для изображений */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    justify-items: center;
-}
-
-/* Стили для изображений */
-.grid img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    border: 2px solid #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* Эффект наведения на изображения */
-.grid img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Стили для изображений */
-.grid a img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    border: 2px solid #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* Эффект наведения на изображения */
-.grid a img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-
-/* Адаптивность для маленьких экранов */
-@media (max-width: 768px) {
-    .grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 15px;
-    }
-
-    .grid img {
-        height: 200px;
-    }
-}
-
-/* Анимация появления изображений */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.grid img {
-    animation: fadeIn 0.5s ease-out forwards;
-    opacity: 0;
-}
-
-.grid img:nth-child(1) { animation-delay: 0.1s; }
-.grid img:nth-child(2) { animation-delay: 0.2s; }
-.grid img:nth-child(3) { animation-delay: 0.3s; }
-.grid img:nth-child(4) { animation-delay: 0.4s; }
-.grid img:nth-child(5) { animation-delay: 0.5s; }
-.grid img:nth-child(6) { animation-delay: 0.6s; }
-	
-	
-	
-	/* Подключаем из Google Fonts изящный рукописный шрифт */
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-/* Главный класс заголовка */
-.fancy{
-  font-family: 'Great Vibes', cursive;
-  font-size: 8vw;                 /* гибкий размер от ширины экрана */
-  font-weight: 700;
-  letter-spacing: 4px;
-  text-align: center;
-  /* Многоцветный анимированный градиент */
-  background: linear-gradient(
-      -45deg,
-      #ff2a2a,
-      #ff9a00,
-      #ffeb3b,
-      #00e676,
-      #00bcd4,
-      #3d5afe,
-      #e040fb,
-      #ff2a2a
-  );
-  background-size 800%;          /* растягиваем, чтобы движение было плавным */
-  -webkit-background-clip: text;  /* «заливаем» именно текст */
-          background-clip: text;
-  color: transparent;             /* текст сам прозрачный — виден градиент */
-  /* Мягкая анимация перелива */
-  animation: flow 10s ease-in-out infinite;
-  /* Сияющее свечение */
-  text-shadow:
-     0 0 10px rgba(255,255,255,.8),
-     0 0 20px rgba(255,255,255,.6),
-     0 0 40px currentColor;
-  margin: 0;
-  position: relative;
-  padding: 20px 0;
-}
-/* Движение градиента */
-@keyframes flow{
-  0%   { background-position:   0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position:   0% 50%; }
-}
-/* Расплывчатый светящий ореол позади текста */
-.fancy::before{
-  content:"";
-  position:absolute;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%) scale(1.05);
-  width:110%;
-  height:110%;
-  background:radial-gradient(circle,rgba(255,255,255,.3) 0%,rgba(255,255,255,0) 70%);
-  filter:blur(20px);
-  z-index:-1;
-}
-	
-/* ===== Адаптивная карта ===== */
-    .map-wrap{width:100%;aspect-ratio:3/4}
-    @media(min-width:600px){.map-wrap{aspect-ratio:16/9}}
-    .map-wrap iframe,
-    .map-wrap .ymaps-2-1-79-map{
-      width:100%!important;height:100%!important;border:0
-    }
-
-
-nav {
-      background-color: #ffccd5;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
- 
-      width: 100%;
-     
-    }
-    
-    nav ul {
-      list-style: none;
-	  font-size: 30px;
-    }
-	nav a {
-	  font-size: 30px;
-	}
-    
-    
-    
-    .icon {
-      font-size: 30px;
-    }
-    
-    /* Responsive design */
-    @media (max-width: 600px) {
-      ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-      }
-    }
-
- 
-  </style>
+  <link rel="stylesheet" href="style.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-
+<button onclick="setTheme('pink')">Pink</button>
+<button onclick="setTheme('mono')">Mono</button>
+<button onclick="setTheme('blue')">Blue</button>
+<button onclick="setTheme('yellow')">Yellow</button>
+<button onclick="setTheme('green')">Green</button>
+<!-- Кнопка дискотека -->
+<button id="discoBtn" onclick="toggleDisco()">Disco On</button>
+<script>
+  // Смена темы вручную
+  function setTheme(name) {
+    document.body.className = name === 'pink' ? '' : 'theme-' + name;
+  }
+  // Порядок тем для дискотеки
+  const themes = ['pink', 'mono', 'blue', 'yellow', 'green'];
+  let idx = 0;          // текущий индекс
+  let discoTimer = null; // id таймера setInterval
+  // Включить/выключить дискотеку
+  function toggleDisco() {
+    const btn = document.getElementById('discoBtn');
+    if (discoTimer) {          // если уже идёт — остановить
+      clearInterval(discoTimer);
+      discoTimer = null;
+      btn.textContent = 'Disco On';
+    } else {                   // иначе запустить
+      btn.textContent = 'Disco Off';
+      setTheme(themes[idx]);   // показать первый цвет сразу
+      discoTimer = setInterval(() => {
+        idx = (idx + 1) % themes.length;
+        setTheme(themes[idx]);
+      }, 250);                // 1000 мс = 1 секунда
+    }
+  }
+</script>
 <header>
-  <div class="heart">❤️</div>
+  <div class="heart" aria-hidden="true">❤️</div>
   <h1>Наши путешествия</h1>
-  <p>Вместе мы исследуем мир и создаем воспоминания</p>
+  <p>Вместе мы исследуем мир и создаём воспоминания</p>
 </header>
 
-<nav class="navbar"> 
-    <ul>
-      <li><a href="#travels"><i class="fas fa-plane-departure icon"></i>Этапы путешествия</a></li>
-      <li><a href="#gallery"><i class="fas fa-images icon"></i>Галерея</a></li>  
-	  <li><a href="#map"><i class="fas fa-map-marked-alt icon"></i>Карта</a></li>
-      <li><a href="#checklist"><i class="fas fa-check-square icon"></i>Чек-лист</a></li>
-      <li><a href="#expenses"><i class="fas fa-wallet icon"></i>Список расходов</a></li>
-    </ul>
+<nav class="navbar">
+  <ul>
+    <li><a href="#travels"><i class="fas fa-plane-departure icon"></i> Этапы путешествия</a></li>
+    <li><a href="#gallery"><i class="fas fa-images icon"></i> Галерея</a></li>
+    <li><a href="#map"><i class="fas fa-map-marked-alt icon"></i> Карта</a></li>
+    <li><a href="#checklist"><i class="fas fa-check-square icon"></i> Чек-лист</a></li>
+    <li><a href="#expenses"><i class="fas fa-wallet icon"></i> Список расходов</a></li>
+  </ul>
 </nav>
+
+<main>
 
 <section id="travels">
   <h2>Этапы путешествия</h2>
@@ -550,7 +264,7 @@ nav {
                 </ul>
             </div>
         </section>
-
+</main>
 <footer>
   Сайт создан для нашей истории путешествий!
   <h6 class="fancy">© Alina&nbsp;&amp;&nbsp;Mark</h6>
