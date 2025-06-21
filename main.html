@@ -54,6 +54,8 @@
     <li><a href="#gallery"><i class="fas fa-images icon"></i> Галерея</a></li>
     <li><a href="#map"><i class="fas fa-map-marked-alt icon"></i> Карта</a></li>
     <li><a href="#checklist"><i class="fas fa-check-square icon"></i> Чек-лист</a></li>
+	<li><a href="#leisure"><i class="fas fa-american-sign-language-interpreting icon"></i> Досуг</a></li>
+	<li><a href="#weather"><i class="fas fa-thermometer-full icon"></i> Погода</a></li>
     <li><a href="#expenses"><i class="fas fa-wallet icon"></i> Список расходов</a></li>
   </ul>
 </nav>
@@ -161,7 +163,7 @@
     </div>
   </section>
 
-<section id="travels">
+<section id="checklist">
 	<h2>Чек-лист</h2>
 	<h3> Улан-Удэ: </h3>
 	<div class="grid">
@@ -252,7 +254,95 @@
 	</div>
 </section>
 
-<section class="section" id="expenses">
+<section id="leisure">	
+  <h2>Досуг</h2>
+  <h3>Судоку</h3>
+
+  <div class="map-wrap">
+    <iframe
+      src="https://sudoweb.com/free-webmaster.php?tail=&coulbody=&coulinner=&couldonn=&coulcadre=&coulrep="
+      width="360"
+      height="500"
+      style="border:none;overflow:hidden"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+<section id="weather">
+  <h2>Погода</h2>
+  <div class="grid">
+    <div class="card">
+	  <h3>Иркутск</h3>
+      <iframe
+        src="https://embed.windy.com/embed2.html?lat=52.29
+		&lon=104.28
+		&detailLat=52.29
+		&detailLon=104.28
+		&width=100%25
+		&height=250
+		&zoom=8
+		&level=surface
+		&overlay=temperature
+		&product=ecmwf
+		&detail=open
+		&message=true
+		&marker=true
+		&calendar=now
+		&metricWind=ms
+		&metricTemp=°C"
+        style="width:100%;height:250px;border:0;border-radius:10px;box-shadow:0 2px 6px var(--shadow);">
+      </iframe>
+    </div>
+    <div class="card">
+	  <h3>Улан-Удэ</h3>
+      <iframe
+        src="https://embed.windy.com/embed2.html?lat=51.83
+		&lon=107.60
+		&detailLat=51.83
+		&detailLon=107.60
+		&width=100%25
+		&height=250
+		&zoom=8
+		&level=surface
+		&overlay=temperature
+		&product=ecmwf
+		&detail=open
+		&message=true
+		&marker=true
+		&calendar=now
+		&metricWind=ms
+		&metricTemp=°C"
+        style="width:100%;height:250px;border:0;border-radius:10px;box-shadow:0 2px 6px var(--shadow);">
+      </iframe>
+    </div>
+    <div class="card">
+	  <h3>Село Горячинск</h3>
+      <iframe
+        src="https://embed.windy.com/embed2.html?lat=52.89
+		&lon=108.25
+		&detailLat=52.89
+		&detailLon=108.25
+		&width=100%25
+		&height=250
+		&zoom=8
+		&level=surface
+		&overlay=temperature
+		&product=ecmwf
+		&detail=open
+		&message=true
+		&marker=true
+		&calendar=now
+		&metricWind=ms
+		&metricTemp=°C"
+        style="width:100%;height:250px;border:0;border-radius:10px;box-shadow:0 2px 6px var(--shadow);">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<section id="expenses">
             <h2>Список расходов</h2>
             <div class="expenses">
                 <ul>
@@ -267,17 +357,6 @@
             </div>
         </section>
 
-
-<section id="leisure">	
-	<h2>Досуг</h2>
-	<h3>Судоку</h3>
-	<div class="map-wrap">
-		<iframe src="http://www.sudoweb.com/free-webmaster.php?tail=&coulbody=&coulinner=&couldonn=&coulcadre=&coulrep="allowfullscreen loading="lazy"></iframe>
-	</div>
-	
-</section>
-<iframe src="https://api.wo-cloud.com/content/widget/?geoObjectKey=2890300&language=ru&region=IN&timeFormat=HH:mm&windUnit=kmh&systemOfMeasurement=metric&temperatureUnit=celsius" name="CW2" scrolling="no" width="318" height="318" frameborder="0" style="border: 1px solid #FFFFFF;border-radius: 14px"></iframe>
-<iframe src="https://api.wo-cloud.com/content/widget/?geoObjectKey=6664511&language=ru&region=IN&timeFormat=HH:mm&windUnit=kmh&systemOfMeasurement=metric&temperatureUnit=celsius" name="CW2" scrolling="no" width="318" height="318" frameborder="0" style="border: 1px solid #FFFFFF;border-radius: 14px"></iframe>
 </main>
 <footer>
   Сайт создан для нашей истории путешествий!
