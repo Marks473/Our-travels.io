@@ -42,9 +42,9 @@ nav{
   padding:10px 0;
   width:100%;
   text-align:center;
-  box-shadow:0 4px 20px var(--shadow);
+  box-shadow:0 4px 15px var(--shadow);
 }
-nav ul{list-style:none;margin:0;padding:0;display:flex;justify-content:center;gap:15px;font-size:1.25rem}
+nav ul{list-style:none;margin:0;padding:0;display:flex;justify-content:center;gap:6px;font-size:1.25rem}
 nav a{color:#fff;text-decoration:none;font-size:75%;}
 nav a:hover{text-decoration:underline}
 
@@ -133,7 +133,7 @@ footer img{width:50%;border-radius:10px;margin-bottom:15px}
 /* ---------- Анимации ---------- */
 @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-/* ---------- Карта (изменённые ; и :) ---------- */
+/* ---------- Карта ) ---------- */
 .map-wrap{width:100%;aspect-ratio:3/4;}
 @media(min-width:600px){.map-wrap{aspect-ratio:16/9;}}
 .map-wrap iframe,
